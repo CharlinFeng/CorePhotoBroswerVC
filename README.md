@@ -36,27 +36,20 @@
 #### 框架特性：<br />
 >.ios版本兼容ios 7.0及以上.<br />
 >.高仿网易新闻，后期将加入仿微信及新浪微博。
->.
->.
->.
->.
-
+>.xib定制界面，适配所有屏幕，同时方便你自定义你的功能，你想增加删除控件非常方便。
+>.各种手势处理，含显示隐藏界面信息，导航条，双击放大，双指捏合缩放。
+>.加入了比较fastion的图片间距，每页图片之前会有一个间距，这样几页图片不会粘在一起，更加美观（网易居然都没加）。
+>.图片保存系统相册功能，及保存过的图片不会重复保存（我试过新浪微博会重复保存）。
+>.任意图片尺寸能够以最合理的方式展示，含复杂的图片frame计算。
+>.支持本地图片展示、支持网络图片展示，支持指定index展示（从第index张展示，不一定是第0张）。
+>.修复了双击放大可能后位置有点偏移的bug
+>.高性能，使用tableView一样的cell缓存池重用机制，性能极佳（重用带来了若干bug，目前已经修复，可能还有）
+>.后期将加入比较帅气的frame放大功能，敬请期待！！！！！！
 
 
 <br /><br />
 #### Charlin想说：<br />
-此版本是全部的QuartzCore绘制，整个框架使用了几乎所有的QuartzCore技术，如果你有兴趣，可以看下源代码，
-算是一个比较不错的QuartzCore实战教程。
-
-对于本框架，有以下技术点和大家分享：<br />
-1.主界面使用Xib定制，如果你需要添加控件，非常方便，比如支付宝顶部有用户头像，我这里没有，所以就没加，如果你需要加，直接在xib添加即可。<br />
-2.本地数据存储使用沙盒存储。<br />
-3.无任何代理设计，全程使用block解决，引用老刘的一句话，目前代理设计模式正在被块代码所逐步取代。<br />
-4.解锁线条绘制使用的是比较复杂的奇偶裁剪技术。有兴趣可以看看苹果官方示例。<br />
-5.关于QuartzCore，使用到的技术除了基本的绘制以外，还使用了图形上下文栈，矩阵变换，刷新图层等。<br />
-6.本框架考虑了添加密码，修改密码，验证密码，忘记密码等支付宝几乎全部的功能，并且使用简单。<br />
-
-
+此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。可能还是有很多bug，可以加我群成都iOS开发群_Charlin：163865401讨论。<br /><br />
 
 
 
@@ -64,73 +57,85 @@
 
 #### 使用示例
     
+    - (IBAction)showAction:(id)sender {
+        
+        //本地图片展示
+        [self localImageShow];
+        
+        //展示网络图片
+    //    [self networkImageShow];
+    }
+    
     /*
-     *  设置密码
+     *  本地图片展示
      */
-    - (IBAction)setPwd:(id)sender {
+    -(void)localImageShow{
         
-        
-        BOOL hasPwd = [CLLockVC hasPwd];
-        hasPwd = NO;
-        if(hasPwd){
+        [PhotoBroswerVC show:self index:2 photoModelBlock:^NSArray *{
             
-            NSLog(@"已经设置过密码了，你可以验证或者修改密码");
-        }else{
+            NSArray *localImages = @[
+                                     
+                                     [UIImage imageNamed:@"15"],
+                                     [UIImage imageNamed:@"14"],
+                                     [UIImage imageNamed:@"13"],
+                                     [UIImage imageNamed:@"12"],
+                                     [UIImage imageNamed:@"11"]
+                                     ];
             
-            [CLLockVC showSettingLockVCInVC:self successBlock:^(CLLockVC *lockVC, NSString *pwd) {
+            NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:localImages.count];
+            for (NSUInteger i = 0; i< localImages.count; i++) {
                 
-                NSLog(@"密码设置成功");
-                [lockVC dismiss:1.0f];
-            }];
-        }
-    }
-
-    /*
-     *  验证密码
-     */
-    - (IBAction)verifyPwd:(id)sender {
-        
-        BOOL hasPwd = [CLLockVC hasPwd];
-        
-        if(!hasPwd){
-            
-            NSLog(@"你还没有设置密码，请先设置密码");
-        }else {
-            
-            [CLLockVC showVerifyLockVCInVC:self forgetPwdBlock:^{
-                NSLog(@"忘记密码");
-            } successBlock:^(CLLockVC *lockVC, NSString *pwd) {
-                NSLog(@"密码正确");
-                [lockVC dismiss:1.0f];
-            }];
-        }
-    }
-
-
-    /*
-     *  修改密码
-     */
-    - (IBAction)modifyPwd:(id)sender {
-        
-        BOOL hasPwd = [CLLockVC hasPwd];
-        
-        if(!hasPwd){
-            
-            NSLog(@"你还没有设置密码，请先设置密码");
-            
-        }else {
-            
-            [CLLockVC showModifyLockVCInVC:self successBlock:^(CLLockVC *lockVC, NSString *pwd) {
+                PhotoModel *pbModel=[[PhotoModel alloc] init];
+                pbModel.mid = i + 1;
+                pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+                pbModel.desc = [NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+                pbModel.image = localImages[i];
                 
-                [lockVC dismiss:.5f];
-            }];
-        }
-
+                [modelsM addObject:pbModel];
+            }
+            
+            return modelsM;
+            
+        }];
     }
-
-
-  
-  <br /><br />
+    
+    
+    /*
+     *  展示网络图片
+     */
+    -(void)networkImageShow{
+        
+        [PhotoBroswerVC show:self index:2 photoModelBlock:^NSArray *{
+            
+            
+            NSArray *networkImages=@[
+                              @"http://www.fevte.com/data/attachment/forum/day_110425/110425102470ac33f571bc1c88.jpg",
+                              @"http://www.netbian.com/d/file/20150505/5a760278eb985d8da2455e3334ad0c0f.jpg",
+                              @"http://www.netbian.com/d/file/20141006/e9d6f04046d483843d353d7a301d36f8.jpg",
+                              @"http://www.netbian.com/d/file/20130906/134dca4108f3f0ed10a4cc3f78848856.jpg",
+                              @"http://www.netbian.com/d/file/20121111/a03b9adb18a982f6a49aa7bfa7b82371.jpg",
+                              @"http://www.netbian.com/d/file/20130421/e0dabeee4e1e62fe114799bc7e4ccd66.jpg",
+                              @"http://www.netbian.com/d/file/20121012/c890c1da17bb5b4291e9733fad8efb42.jpg",
+                              @"http://www.netbian.com/d/file/20150318/c5c68492a4d6998229d1b6068c77951e.jpg0"
+                              ];
+            
+            NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:networkImages.count];
+            for (NSUInteger i = 0; i< networkImages.count; i++) {
+                
+                PhotoModel *pbModel=[[PhotoModel alloc] init];
+                pbModel.mid = i + 1;
+                pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+                pbModel.desc = [NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+                pbModel.image_HD_U = networkImages[i];
+                
+                [modelsM addObject:pbModel];
+            }
+            
+            return modelsM;
+            
+            
+        }];
+    }
 
   
 
@@ -147,7 +152,7 @@
 
 #### 版权说明 RIGHTS <br />
 作品说明：本框架由iOS开发攻城狮Charlin制作。<br />
-作品时间： 2015.04.26 18:07<br />
+作品时间： 2015.05.10 10:07<br />
 #### 关于Chariln INTRODUCE <br />
 作者简介：Charlin-四川成都华西都市报旗下华西都市网络有限公司技术部iOS工程师！<br /><br />
 
