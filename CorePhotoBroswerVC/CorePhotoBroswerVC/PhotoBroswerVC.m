@@ -10,7 +10,6 @@
 #import "PhotoBroswerLayout.h"
 #import "PhotoItemView.h"
 #import "UIView+Extend.h"
-#import "CoreAleetViewManagerVC.h"
 #import "UIImage+Extend.h"
 #import "PBConst.h"
 #import "CoreSVP.h"
