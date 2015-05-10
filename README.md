@@ -10,10 +10,6 @@
     注：本框架是Charlin最后一个OC框架，未来的框架会以swift为新的语言。
 
 
-
-<br /><br />
-
-
 <br /><br />
 #### 友情提示 MENTION<br />
 Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没有你需要的）：<br />
@@ -161,25 +157,23 @@ Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没�
 
   
 
-<br /><br />
+<br /><br /><br />
 
 -----
     CorePhotoBroswerVC 快速集成高性能照片浏览器，支持本地及网络相册！！
 -----
 
-<br /><br />
-
-
+<br /><br /><br />
 
 
 #### 版权说明 RIGHTS <br />
 作品说明：本框架由iOS开发攻城狮Charlin制作。<br />
 作品时间： 2015.05.10 10:07<br />
 #### 关于Chariln INTRODUCE <br />
-作者简介：Charlin-四川成都华西都市报旗下华西都市网络有限公司技术部iOS工程师！<br /><br />
+作者简介：Charlin-四川成都华西都市报旗下华西都市网络有限公司技术部iOS工程师！<br /><br /><br />
 
 
-#### 联系方式 CONTACT <br />ta
+#### 联系方式 CONTACT <br />
 Q    Q：1761904945（请注明缘由）<br />
 Mail：1761904945@qq.com<br />
 
