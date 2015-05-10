@@ -10,7 +10,7 @@
 
 
 <br /><br />
-#### 示例截图<br />
+#### 精彩截图（动态图片较大，请耐心等待）<br />
 
 ###### 展示网络图片相册<br />
 ![image](./CorePhotoBroswerVC/show/1.gif)<br /><br />
