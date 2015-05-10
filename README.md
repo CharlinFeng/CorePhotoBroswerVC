@@ -2,7 +2,9 @@
 
     Charlin出框架的目标：简单、易用、实用、高度封装、绝对解耦！
 
+<br />
 #### CorePhotoBroswerVC
+
 快速集成高性能照片浏览器，支持本地及网络相册！<br />
 
     注：本框架是Charlin最后一个OC框架，未来的框架会以swift为新的语言。
