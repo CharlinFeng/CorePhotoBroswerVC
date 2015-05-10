@@ -13,6 +13,15 @@
 
 <br /><br />
 
+
+<br /><br />
+#### 友情提示 MENTION<br />
+Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没有你需要的）：<br />
+首页：https://github.com/nsdictionary<br />
+列表：https://github.com/nsdictionary?tab=repositories<br />
+成都iOS开发群：163865401（Charlin创建与维护，欢迎加群交流！）<br />
+<br /><br />
+
 #### 写在之前：<br />
 官人要是觉得本框架还不错，请支持我，支持码农的无偿付出！不用给钱，右上角star或者fork一下就可以，谢谢你的支持！<br />
 本框架主要目标是快速集成，目前，照片浏览器太多了，好用的还没多少，<br />MJ有一个不错，可惜年代久远，bug太多，而且长久没有维护更新，其他框架大多使用复杂，难以自定义。<br /><br />
@@ -174,9 +183,3 @@
 Q    Q：1761904945（请注明缘由）<br />
 Mail：1761904945@qq.com<br />
 
-<br /><br />
-#### 友情提示 MENTION<br />
-Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没有你需要的）：<br />
-首页：https://github.com/nsdictionary<br />
-列表：https://github.com/nsdictionary?tab=repositories<br />
-成都iOS开发群：163865401（Charlin创建与维护）<br />
