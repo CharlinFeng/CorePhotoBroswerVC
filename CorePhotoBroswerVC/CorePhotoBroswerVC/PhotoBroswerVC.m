@@ -120,6 +120,14 @@
     [self vcPrepare];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+
 
 /*
  *  控制器准备
@@ -240,17 +248,6 @@
     }];
 }
 
-
-
-
-
-/*
- *  消失
- */
--(void)dismiss{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 

@@ -21,9 +21,6 @@
  *  网络图片
  */
 
-/** 缩略图地址 */
-@property (nonatomic,copy) NSString *image_thumb_U;
-
 /** 高清图地址 */
 @property (nonatomic,copy) NSString *image_HD_U;
 

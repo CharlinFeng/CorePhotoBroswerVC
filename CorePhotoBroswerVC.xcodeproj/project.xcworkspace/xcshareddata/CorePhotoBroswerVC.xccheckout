@@ -10,14 +10,14 @@
 	<string>CorePhotoBroswerVC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9AA047A72BE33BD1A543A094063C25B95931150A</key>
+		<key>38DC38F766121E3DCC60234022D9F6F199797905</key>
 		<string>https://github.com/nsdictionary/CorePhotoBroswerVC.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CorePhotoBroswerVC.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9AA047A72BE33BD1A543A094063C25B95931150A</key>
+		<key>38DC38F766121E3DCC60234022D9F6F199797905</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9AA047A72BE33BD1A543A094063C25B95931150A</string>
+	<string>38DC38F766121E3DCC60234022D9F6F199797905</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9AA047A72BE33BD1A543A094063C25B95931150A</string>
+			<string>38DC38F766121E3DCC60234022D9F6F199797905</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CorePhotoBroswerVC</string>
 		</dict>
