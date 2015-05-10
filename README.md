@@ -13,13 +13,13 @@
 #### 示例截图<br />
 
 ###### 展示网络图片相册<br />
-![image](./CorePhotoBroswerVC/1.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/1.gif)<br /><br />
 
 ###### 展示本地图片相册<br />
-![image](./CorePhotoBroswerVC/2.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/2.gif)<br /><br />
 
 ###### 网络或者本地图片保存到手机系统相册<br />
-![image](./CorePhotoBroswerVC/3.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/3.gif)<br /><br />
 <br /><br />
 
 
