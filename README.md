@@ -39,6 +39,7 @@
 >.ios版本兼容ios 7.0及以上.<br />
 >.高仿网易新闻，后期将加入仿微信及新浪微博。<br />
 >.xib定制界面，适配所有屏幕，同时方便你自定义你的功能，你想增加删除控件非常方便。<br />
+>.好看的进度指示器，占位图片及HUD集成。<br />
 >.各种手势处理，含显示隐藏界面信息，导航条，双击放大，双指捏合缩放。<br />
 >.加入了比较fastion的图片间距，每页图片之前会有一个间距，这样几页图片不会粘在一起，更加美观（网易居然都没加）。<br />
 >.图片保存系统相册功能，及保存过的图片不会重复保存（我试过新浪微博会重复保存）。<br />
@@ -50,8 +51,18 @@
 
 
 <br /><br />
+
 #### Charlin想说：<br />
 此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。可能还是有很多bug，可以加我群成都iOS开发群_Charlin：163865401讨论。<br /><br />
+
+<br />
+#### 框架依赖：<br />
+>.CoreSDWebImage<br />
+>.CoreArchive<br />
+>.CoreCategory<br />
+>.CoreSVP<br />
+>.LFRoundProgressView<br />
+>.CoreExtend<br />
 
 
 
