@@ -12,31 +12,32 @@
 
 
 
-<br /><br />
+<br /><br /><br />
 #### 友情提示 MENTION<br />
 Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没有你需要的）：<br />
 首页：https://github.com/nsdictionary<br />
 列表：https://github.com/nsdictionary?tab=repositories<br />
 成都iOS开发群：163865401（Charlin创建与维护，欢迎加群交流！）<br />
-<br /><br />
+<br /><br /><br />
 
 #### 2.0版本特性：<br />
 全新2.0版本，主要添加了众多切换方式，以及多种切换效果，供大家任意选取，请看Charlin给你展示：<br />
+<br /><br />
 
 ##### Push方式展示(图片较大，请耐心等待)<br />
-![image](./CorePhotoBroswerVC/show/push.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/push.gif)<br /><br /><br />
 
 ##### modal方式展示(图片较大，请耐心等待)<br />
-![image](./CorePhotoBroswerVC/show/modal.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/modal.gif)<br /><br /><br />
 
 ##### transition方式展示(图片较大，请耐心等待)<br />
-![image](./CorePhotoBroswerVC/show/transition.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/transition.gif)<br /><br /><br />
 
 ##### zoom方式展示(图片较大，请耐心等待)<br />
-![image](./CorePhotoBroswerVC/show/zoom.gif)<br /><br />
+![image](./CorePhotoBroswerVC/show/zoom.gif)<br /><br /><br />
 
 后期会继续增加一个展示方式，请期待！！！
-
+<br /><br />
 #### 细节说明：<br />
 zoom方式下，有非常多的细节，这里截图说明一二<br />
 ##### 如果你在放大图片的情况下，直接关闭相册浏览器，则框架会做一个连续动画(图片较大，请耐心等待)
@@ -76,19 +77,19 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
         }
         
         return modelsM;
-    }];
-}
-
-
-/*
- *  展示网络图片
- */
--(void)networkImageShow:(NSUInteger)index{
+        }];
+    }
     
-    //避免循环引用
-    __weak typeof(self) weakSelf=self;
     
-    [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+    /*
+     *  展示网络图片
+     */
+    -(void)networkImageShow:(NSUInteger)index{
+        
+        //避免循环引用
+        __weak typeof(self) weakSelf=self;
+    
+        [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
         
         
         NSArray *networkImages=@[
@@ -130,7 +131,7 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
 
 
 
-
+<br /><br /><br />
 
 ### 以下是1.0版本说明
 
