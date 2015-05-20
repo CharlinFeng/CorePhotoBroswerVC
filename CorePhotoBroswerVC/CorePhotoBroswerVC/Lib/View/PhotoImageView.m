@@ -36,6 +36,8 @@
     //确定frame
     [self calFrame];
     
+    self.contentMode = UIViewContentModeScaleAspectFit;
+    
     if(_ImageSetBlock != nil) _ImageSetBlock(image);
 }
 
@@ -108,7 +110,7 @@
     
     CGRect frame = [UIView frameWithW:calW h:calH center:self.screenCenter];
     
-    self.frame = frame;
+    self.calF = frame;
 }
 
 

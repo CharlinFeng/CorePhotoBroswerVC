@@ -90,7 +90,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="aju-yJ-YWP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="04D-fi-2NY"/>
                 <constraint firstAttribute="bottom" secondItem="RLq-hQ-X8E" secondAttribute="bottom" id="NXy-TB-ShD"/>
@@ -100,7 +100,7 @@
                 <constraint firstItem="RLq-hQ-X8E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mr6-yK-Tcv"/>
                 <constraint firstItem="aju-yJ-YWP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z0u-B8-TAv"/>
             </constraints>
-            <point key="canvasLocation" x="-498" y="104"/>
+            <point key="canvasLocation" x="-906" y="292"/>
         </view>
     </objects>
     <resources>

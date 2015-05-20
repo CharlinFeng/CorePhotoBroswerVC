@@ -114,9 +114,29 @@
 #import "PhotoModel.h"
 
 
+typedef enum {
+    
+    //modal
+    PhotoBroswerVCTypePush=0,
+    
+    //push
+    PhotoBroswerVCTypeModal,
+    
+    //transition
+    PhotoBroswerVCTypeTransition,
+    
+    //zoom
+    PhotoBroswerVCTypeZoom,
+    
+}PhotoBroswerVCType;
+
+
+
+
 @interface PhotoBroswerVC : UIViewController
 
-+(void)show:(UIViewController *)vc index:(NSUInteger)index photoModelBlock:(NSArray *(^)())photoModelBlock;
+
++(void)show:(UIViewController *)handleVC type:(PhotoBroswerVCType)type index:(NSUInteger)index photoModelBlock:(NSArray *(^)())photoModelBlock;
 
 
 @end

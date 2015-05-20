@@ -8,7 +8,6 @@
 
 #import "PhotoItemView.h"
 #import "UIView+Extend.h"
-#import "PhotoImageView.h"
 #import "UIView+PBExtend.h"
 #import "PBPGView.h"
 #import "PBBlurImageView.h"
@@ -19,7 +18,9 @@
 
 
 
-@interface PhotoItemView ()<UIScrollViewDelegate>
+@interface PhotoItemView ()<UIScrollViewDelegate>{
+    CGFloat _zoomScale;
+}
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -34,6 +35,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMarginC;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightMarginC;
+
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 
 
@@ -56,9 +59,6 @@
 
 
 
-
-/** 展示照片的视图 */
-@property (nonatomic,strong) PhotoImageView *photoImageView;
 
 
 /** 双击放大 */
@@ -137,6 +137,35 @@
     }
 
     self.scrollView.contentSize = self.photoImageView.frame.size;
+
+    
+    self.photoImageView.frame = self.photoModel.sourceFrame;
+    
+    if(self.photoModel.isFromSourceFrame && self.type == PhotoBroswerVCTypeZoom){
+        
+        self.bgView.alpha = 0;
+        
+        CGFloat timeInterval = .52f;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:timeInterval-.3f animations:^{
+                self.bgView.alpha = 1;
+                self.bgView.backgroundColor = [UIColor blackColor];
+            }];
+        });
+        
+        [UIView animateWithDuration:timeInterval delay:0 usingSpringWithDamping:.52f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            self.photoImageView.frame = self.photoImageView.calF;
+            
+        } completion:nil];
+        
+        //删除标记
+        self.photoModel.isFromSourceFrame = NO;
+        
+    }else{
+       self.photoImageView.frame = self.photoImageView.calF; 
+    }
 
 
     //标题
@@ -383,5 +412,52 @@
     self.hasImage = NO;
     self.photoImageView.frame=CGRectZero;
 }
+
+
+-(CGRect)itemImageViewFrame{
+    
+    return self.photoImageView.frame;
+}
+
+
+
+-(void)zoomDismiss:(void(^)())compeletionBlock{
+    
+    //隐藏图片
+    self.photoModel.sourceImageView.hidden = YES;
+    
+    [UIView animateWithDuration:.4f animations:^{
+        
+        self.bgView.alpha=0;
+        
+        self.bottomView.alpha=0;
+    }];
+    
+    
+    [UIView animateWithDuration:.5f delay:0 usingSpringWithDamping:.6f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.photoImageView.contentMode = self.photoModel.sourceImageView.contentMode;
+        self.photoImageView.frame = self.photoModel.sourceFrame;
+        self.photoImageView.clipsToBounds = YES;
+    } completion:^(BOOL finished) {
+        
+        //显示图片
+        self.photoModel.sourceImageView.hidden = NO;
+        
+        if(finished && compeletionBlock!=nil) compeletionBlock();
+    }];
+}
+
+
+
+-(CGFloat)zoomScale{
+    return self.scrollView.zoomScale;
+}
+
+-(void)setZoomScale:(CGFloat)zoomScale{
+    _zoomScale = zoomScale;
+    [self.scrollView setZoomScale:zoomScale animated:YES];
+}
+
+
 
 @end

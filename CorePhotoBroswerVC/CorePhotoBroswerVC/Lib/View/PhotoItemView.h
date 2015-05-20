@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoModel.h"
+#import "PhotoImageView.h"
+#import "PhotoBroswerVC.h"
 
 @interface PhotoItemView : UIView
 
@@ -25,6 +27,18 @@
 
 /** 是否有图片数据 */
 @property (nonatomic,assign) BOOL hasImage;
+
+/** 当前缩放比例 */
+@property (nonatomic,assign) CGFloat zoomScale;
+
+
+/** 展示照片的视图 */
+@property (nonatomic,strong) PhotoImageView *photoImageView;
+
+/** type */
+@property (nonatomic,assign) PhotoBroswerVCType type;
+
+
 /*
  *  处理bottomView
  */
@@ -36,6 +50,11 @@
  *  保存图片及回调
  */
 -(void)save:(void(^)())ItemImageSaveCompleteBlock failBlock:(void(^)())failBlock;
+
+
+/** 缩回正常 */
+-(void)zoomDismiss:(void(^)())compeletionBlock;
+
 
 
 /*

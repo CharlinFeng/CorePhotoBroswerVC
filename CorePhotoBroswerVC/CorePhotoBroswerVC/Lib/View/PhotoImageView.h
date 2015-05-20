@@ -14,4 +14,6 @@
 @property (nonatomic,copy) void (^ImageSetBlock)(UIImage *image);
 
 
+@property (nonatomic,assign) CGRect calF;
+
 @end

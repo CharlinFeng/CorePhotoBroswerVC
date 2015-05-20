@@ -45,11 +45,15 @@
 /** 描述 */
 @property (nonatomic,copy) NSString *desc;
 
+/** 源frame */
+@property (nonatomic,assign,readonly) CGRect sourceFrame;
+
+/** 源imageView */
+@property (nonatomic,weak) UIImageView *sourceImageView;
 
 
-
-
-
+/** 是否从源frame放大呈现 */
+@property (nonatomic,assign) BOOL isFromSourceFrame;
 
 
 /*

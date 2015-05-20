@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2055" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,6 +12,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-8x-tLp">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="CWZ-4u-Edv">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -69,14 +73,25 @@
                 <constraint firstAttribute="bottom" secondItem="CWZ-4u-Edv" secondAttribute="bottom" id="1tx-lJ-Nj8"/>
                 <constraint firstItem="CWZ-4u-Edv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2LU-Iz-BR7"/>
                 <constraint firstItem="DuQ-Om-ad9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CRr-BG-JYw"/>
+                <constraint firstItem="bYA-8x-tLp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="I9w-FI-EFH"/>
                 <constraint firstAttribute="trailing" secondItem="DuQ-Om-ad9" secondAttribute="trailing" id="O1b-0L-pwv"/>
+                <constraint firstItem="bYA-8x-tLp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RBi-G8-Xsb"/>
+                <constraint firstItem="DuQ-Om-ad9" firstAttribute="top" secondItem="bYA-8x-tLp" secondAttribute="bottom" id="VKr-eq-NDV"/>
+                <constraint firstAttribute="bottom" secondItem="bYA-8x-tLp" secondAttribute="bottom" id="XFj-E7-bUu"/>
                 <constraint firstAttribute="centerY" secondItem="hfs-b7-LLt" secondAttribute="centerY" id="bRO-Hk-7VE"/>
                 <constraint firstItem="CWZ-4u-Edv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="enW-Z2-PPn"/>
                 <constraint firstAttribute="centerX" secondItem="hfs-b7-LLt" secondAttribute="centerX" id="g5m-Zg-zTl"/>
+                <constraint firstAttribute="trailing" secondItem="bYA-8x-tLp" secondAttribute="trailing" id="izw-fP-yHK"/>
                 <constraint firstAttribute="trailing" secondItem="CWZ-4u-Edv" secondAttribute="trailing" id="oB2-E9-at6"/>
                 <constraint firstAttribute="bottom" secondItem="DuQ-Om-ad9" secondAttribute="bottom" id="wcg-6k-VTD"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="VKr-eq-NDV"/>
+                </mask>
+            </variation>
             <connections>
+                <outlet property="bgView" destination="bYA-8x-tLp" id="n5j-WU-IYD"/>
                 <outlet property="bottomMarginC" destination="wcg-6k-VTD" id="OU6-a8-Msu"/>
                 <outlet property="bottomView" destination="DuQ-Om-ad9" id="kZZ-8d-BSt"/>
                 <outlet property="descLabel" destination="hTD-B1-ZNQ" id="C1a-J5-0aT"/>
@@ -85,7 +100,7 @@
                 <outlet property="scrollView" destination="CWZ-4u-Edv" id="D1k-iv-K0Y"/>
                 <outlet property="titleLabel" destination="S5c-Jh-L8M" id="AEN-zo-Gjz"/>
             </connections>
-            <point key="canvasLocation" x="-1537" y="351"/>
+            <point key="canvasLocation" x="-1563" y="321"/>
         </view>
     </objects>
 </document>
