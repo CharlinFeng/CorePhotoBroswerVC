@@ -3,9 +3,13 @@
     Charlin出框架的目标：简单、易用、实用、高度封装、绝对解耦！
 
 <br />
-#### CorePhotoBroswerVC
+
+
+
+## 秒杀MJPhotobswer, CorePhotoBroswerVC 2.0版本
 
 快速集成高性能照片浏览器，支持本地及网络相册！<br />
+
 
 
 <br /><br />
@@ -16,9 +20,125 @@ Charlin（成都）更多原创项目（涵盖了方方面面，看看还有没�
 成都iOS开发群：163865401（Charlin创建与维护，欢迎加群交流！）<br />
 <br /><br />
 
+#### 2.0版本特性：<br />
+全新2.0版本，主要添加了众多切换方式，以及多种切换效果，供大家任意选取，请看Charlin给你展示：<br />
+
+##### Push方式展示(图片较大，请耐心等待)<br />
+![image](./CorePhotoBroswerVC/show/push.gif)<br /><br />
+
+##### modal方式展示(图片较大，请耐心等待)<br />
+![image](./CorePhotoBroswerVC/show/modal.gif)<br /><br />
+
+##### transition方式展示(图片较大，请耐心等待)<br />
+![image](./CorePhotoBroswerVC/show/transition.gif)<br /><br />
+
+##### zoom方式展示(图片较大，请耐心等待)<br />
+![image](./CorePhotoBroswerVC/show/zoom.gif)<br /><br />
+
+后期会继续增加一个展示方式，请期待！！！
+
+#### 细节说明：<br />
+zoom方式下，有非常多的细节，这里截图说明一二<br />
+##### 如果你在放大图片的情况下，直接关闭相册浏览器，则框架会做一个连续动画(图片较大，请耐心等待)
+![image](./CorePhotoBroswerVC/show/zoomMax.gif)<br /><br />
+
+##### 如果相册浏览器退出时对应图片超出屏幕之外，此时会以另外一种动画方式展示(图片较大，请耐心等待)
+![image](./CorePhotoBroswerVC/show/outScreen.gif)<br /><br />
+
+
+#### 使用示例：<br />
+    /*
+     *  本地图片展示
+     */
+    -(void)localImageShow:(NSUInteger)index{
+        
+        //避免循环引用
+        __weak typeof(self) weakSelf=self;
+    
+        [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+        
+        NSArray *localImages = weakSelf.images;
+        
+        NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:localImages.count];
+        for (NSUInteger i = 0; i< localImages.count; i++) {
+            
+            PhotoModel *pbModel=[[PhotoModel alloc] init];
+            pbModel.mid = i + 1;
+            pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+            pbModel.desc = [NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+            pbModel.image = localImages[i];
+            
+            //源frame
+            UIImageView *imageV =(UIImageView *) weakSelf.contentView.subviews[i];
+            pbModel.sourceImageView = imageV;
+            
+            [modelsM addObject:pbModel];
+        }
+        
+        return modelsM;
+    }];
+}
+
+
+/*
+ *  展示网络图片
+ */
+-(void)networkImageShow:(NSUInteger)index{
+    
+    //避免循环引用
+    __weak typeof(self) weakSelf=self;
+    
+    [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+        
+        
+        NSArray *networkImages=@[
+                          @"http://www.netbian.com/d/file/20150519/f2897426d8747f2704f3d1e4c2e33fc2.jpg",
+                          @"http://www.netbian.com/d/file/20130502/701d50ab1c8ca5b5a7515b0098b7c3f3.jpg",
+                          @"http://www.netbian.com/d/file/20110418/48d30d13ae088fd80fde8b4f6f4e73f9.jpg",
+                          @"http://www.netbian.com/d/file/20150318/869f76bbd095942d8ca03ad4ad45fc80.jpg",
+                          @"http://www.netbian.com/d/file/20110424/b69ac12af595efc2473a93bc26c276b2.jpg",
+                          
+                          @"http://www.netbian.com/d/file/20140522/3e939daa0343d438195b710902590ea0.jpg",
+                          
+                          @"http://www.netbian.com/d/file/20141018/7ccbfeb9f47a729ffd6ac45115a647a3.jpg",
+                          
+                          @"http://www.netbian.com/d/file/20140724/fefe4f48b5563da35ff3e5b6aa091af4.jpg",
+                          
+                          @"http://www.netbian.com/d/file/20140529/95e170155a843061397b4bbcb1cefc50.jpg"
+                          ];
+        
+        NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:networkImages.count];
+        for (NSUInteger i = 0; i< networkImages.count; i++) {
+            
+            PhotoModel *pbModel=[[PhotoModel alloc] init];
+            pbModel.mid = i + 1;
+            pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+            pbModel.desc = [NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+            pbModel.image_HD_U = networkImages[i];
+            
+            //源frame
+            UIImageView *imageV =(UIImageView *) weakSelf.contentView.subviews[i];
+            pbModel.sourceImageView = imageV;
+            
+            [modelsM addObject:pbModel];
+        }
+        
+        return modelsM;
+    }];
+}
+
+
+
+
+
+
+### 以下是1.0版本说明
+
 #### 写在之前：<br />
 官人要是觉得本框架还不错，请支持我，支持码农的无偿付出！不用给钱，右上角star或者fork一下就可以，谢谢你的支持！<br />
 本框架主要目标是快速集成，目前，照片浏览器太多了，好用的还没多少，<br />MJ有一个不错，可惜年代久远，bug太多，而且长久没有维护更新，其他框架大多使用复杂，难以自定义。<br /><br />
+
+
 
 
 #### 特别说明：<br />
