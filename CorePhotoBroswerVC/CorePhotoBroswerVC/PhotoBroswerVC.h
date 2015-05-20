@@ -112,23 +112,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoModel.h"
+#import "PhotoBroswerType.h"
 
 
-typedef enum {
-    
-    //modal
-    PhotoBroswerVCTypePush=0,
-    
-    //push
-    PhotoBroswerVCTypeModal,
-    
-    //transition
-    PhotoBroswerVCTypeTransition,
-    
-    //zoom
-    PhotoBroswerVCTypeZoom,
-    
-}PhotoBroswerVCType;
 
 
 

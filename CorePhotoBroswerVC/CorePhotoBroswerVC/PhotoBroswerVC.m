@@ -95,12 +95,14 @@
     
     if(photoModels == nil || photoModels.count == 0) return;
     
-    BOOL isOK = [PhotoModel check:photoModels];
+    NSString *result= [PhotoModel check:photoModels type:type];
     
-    if(!isOK){
-        NSLog(@"错误：请为每个相册模型对象传入唯一的mid标识，因为保存图片涉及缓存等需要唯一标识,且不能为0");
+    if(result !=nil){
+        NSLog(@"%@",result);
         return;
     }
+    
+    
     
     PhotoBroswerVC *pbVC = [[self alloc] init];
     

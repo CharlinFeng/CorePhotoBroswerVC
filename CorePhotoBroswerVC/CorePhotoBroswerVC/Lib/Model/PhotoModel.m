@@ -18,24 +18,34 @@
 /*
  *  检查数组合法性
  */
-+(BOOL)check:(NSArray *)photoModels{
++(NSString *)check:(NSArray *)photoModels type:(PhotoBroswerVCType)type{
     
     if(photoModels==nil || photoModels.count==0) return NO;
     
-    __block BOOL isOK =YES;
+    __block NSString *result =nil;
     
     [photoModels enumerateObjectsUsingBlock:^(PhotoModel *photoModel, NSUInteger idx, BOOL *stop) {
         
         if(photoModel.mid ==0){
             
-            isOK = NO;
+            result = @"错误：请为每个相册模型对象传入唯一的mid标识，因为保存图片涉及缓存等需要唯一标识,且不能为0";
             
             *stop = YES;
         }
         
+        if(PhotoBroswerVCTypeZoom == type){
+            
+            if(photoModel.sourceImageView == nil){
+                result = @"错误：当PhotoBroswerVCTypeZoom == type时，请传入源imageView控件,即需要传photoModel.sourceImageView属性。";
+                *stop = YES;
+            }
+        }
+        
+        
+        
     }];
     
-    return isOK;
+    return result;
 }
 
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "PhotoBroswerType.h"
+
 @interface PhotoModel : NSObject
 
 /** mid，保存图片缓存唯一标识，必须传 */
@@ -51,7 +53,6 @@
 /** 源imageView */
 @property (nonatomic,weak) UIImageView *sourceImageView;
 
-
 /** 是否从源frame放大呈现 */
 @property (nonatomic,assign) BOOL isFromSourceFrame;
 
@@ -59,7 +60,7 @@
 /*
  *  检查数组合法性
  */
-+(BOOL)check:(NSArray *)photoModels;
++(NSString *)check:(NSArray *)photoModels type:(PhotoBroswerVCType)type;
 
 
 
