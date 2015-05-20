@@ -40,9 +40,6 @@
                 *stop = YES;
             }
         }
-        
-        
-        
     }];
     
     return result;
