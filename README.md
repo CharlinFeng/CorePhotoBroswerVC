@@ -43,6 +43,13 @@
 
 <br /><br />
 
+框架推荐
+===========
+【CoreModel】MJExtension续作之三：一键ORM,全自动CURD，是时候抛弃Core Data了！！！ 
+地址：https://github.com/nsdictionary/CoreClass
+<br /><br /><br />
+
+
 #### 2.0版本特性 FEATURE<br />
 全新2.0版本，主要添加了众多切换方式，以及多种切换效果，供大家任意选取，请看Charlin给你展示：<br />
 <br /><br />
