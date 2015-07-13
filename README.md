@@ -47,6 +47,9 @@
 框架推荐：CoreModel系列 SERIES
 ===============
 
+#### 重磅推出：Swift版的MJExtension，运行时、反射与一键字典模型互转
+文档：https://github.com/nsdictionary/CFRuntime
+
 第一季：CoreFMDB
 https://github.com/nsdictionary/CoreFMDB
 
@@ -329,4 +332,3 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
     }
 
   
-
