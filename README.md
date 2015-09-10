@@ -1,6 +1,6 @@
 <br />
 
-####  特大更新
+####  特大更新（关注[信息公告牌](https://github.com/CharlinFeng/Show)）
 #### swift完美版，大量听取OC版用户心声，呕心沥血打造更强大更好用更适合你的照片浏览器！！！
 地址：https://github.com/nsdictionary/PhotoBrowser/ 
 
