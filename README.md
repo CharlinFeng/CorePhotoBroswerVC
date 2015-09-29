@@ -1,8 +1,8 @@
 <br />
 
-####  特大更新（关注[信息公告牌](https://github.com/CharlinFeng/Show)）
-#### swift完美版，大量听取OC版用户心声，呕心沥血打造更强大更好用更适合你的照片浏览器！！！
-地址：https://github.com/nsdictionary/PhotoBrowser/ 
+####  照片浏览器已经大更新（请关注[信息公告牌](https://github.com/CharlinFeng/Show)）
+#### 敬呈：Swift完美版，大量听取OC版用户心声，呕心沥血打造更强大更好用更适合你的照片浏览器！！！
+##### [https://github.com/nsdictionary/PhotoBrowser/](https://github.com/nsdictionary/PhotoBrowser/) 
 
 <br /><br /><br />
 
@@ -12,7 +12,7 @@
 
 <br />
 
-秒杀MJPhotobswer, CorePhotoBroswerVC 2.0版本
+CorePhotoBroswerVC 2.0版本
 ===============
 快速集成高性能照片浏览器，支持本地及网络相册！<br />
 
@@ -189,8 +189,8 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
 
 <br /><br />
 
-#### Charlin想说 SAY<br />
-此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。可能还是有很多bug，可以加我群成都iOS开发群_Charlin：163865401讨论。<br /><br />
+#### 心声 SAY<br />
+此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。<br /><br />
 
 <br />
 #### 框架依赖 APPEND（本框架默认集成以下框架，最新到我这里查看https://github.com/nsdictionary?tab=repositories）<br />
