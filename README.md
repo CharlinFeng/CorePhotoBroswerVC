@@ -1,3 +1,7 @@
+
+#### 从Code4App 过来的朋友，请查看并点击收藏[信息公告牌](https://github.com/CharlinFeng/Show)
+
+
 <br />
 
 ####  照片浏览器已经大更新（请关注[信息公告牌](https://github.com/CharlinFeng/Show)）
