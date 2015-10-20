@@ -1,5 +1,5 @@
 
-### 从Code4App 过来的朋友，请查看并点击收藏[信息公告牌](https://github.com/CharlinFeng/Show)
+## 从Code4App 过来的朋友，请查看并点击收藏[信息公告牌](https://github.com/CharlinFeng/Show)
 
 
 <br />
